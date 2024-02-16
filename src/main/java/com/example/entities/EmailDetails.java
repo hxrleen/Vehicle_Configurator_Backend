@@ -2,7 +2,7 @@ package com.example.entities;
 
 public class EmailDetails {
 	
-	private String recipient="sakshay8379@gmail.com";
+	private String recipient;
     private String msgBody;
     private String name;
     private String useremail;

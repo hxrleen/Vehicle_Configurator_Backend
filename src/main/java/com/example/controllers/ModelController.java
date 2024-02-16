@@ -24,7 +24,7 @@ public class ModelController {
 	  getVariantList(@PathVariable(value="Seg_id") int Seg_id, @PathVariable(value="Mfg_id") int Mfg_id)
 	  {
 		  return mdl_mgr.getvariant(Seg_id, Mfg_id);
-		  }
+	  }
 	 
 	/*
 	 * @GetMapping("api/Model/{Seg_id}/{Mfg_id}") public List<Model>
