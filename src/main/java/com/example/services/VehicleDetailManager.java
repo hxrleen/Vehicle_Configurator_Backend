@@ -2,6 +2,8 @@ package com.example.services;
 
 import java.util.List;
 
+import com.example.entities.Model;
+
 public interface VehicleDetailManager {
 
 	public List<String> getVehicleDetailsByCore(int model_id);

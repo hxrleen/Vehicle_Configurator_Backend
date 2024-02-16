@@ -1,8 +1,9 @@
 package com.example.controllers;
 
-import java.awt.PageAttributes.MediaType;
-import java.net.http.HttpHeaders;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.dtos.Price;
 import com.example.entities.Model;
 import com.example.entities.Segment;
+import com.example.handlers.ResponseHandler;
 import com.example.services.VehicleDetailManager;
 
 
@@ -49,5 +51,7 @@ public class VehicleDetailController {
 	public List<String> getVehicleDetailsByExterior(@PathVariable int model_id){                                            
 		return vehicledetail_mgr.getVehicleDetailsByExterior(model_id);
 	}
+	
+
 	
 }

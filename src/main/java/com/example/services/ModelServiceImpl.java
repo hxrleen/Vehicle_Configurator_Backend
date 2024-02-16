@@ -19,10 +19,9 @@ public class ModelServiceImpl implements ModelService {
 		return mdl_repo.getVariants(Seg_id, Mfg_id);
 	}
 
-
+	@Override
+    public List<Model> findAllModelsById(int id) {
+        return mdl_repo.findAllById(id);
+    }
 	
-	
-
-	
-
 }
