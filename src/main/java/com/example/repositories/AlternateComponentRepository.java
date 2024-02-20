@@ -23,6 +23,9 @@ public interface AlternateComponentRepository extends JpaRepository<Alternate_Co
 	@Query(value ="select distinct comp_name from vehicle_detail v join component c on v.comp_id = c.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 's' ", nativeQuery = true)
 	List<String> getCompnameByStd(@Param("model_id") int model_id);
 	
+	@Query(value ="select distinct comp_name from vehicle_detail v join component c on v.comp_id = c.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'c' ", nativeQuery = true)
+	List<String> getCompnameByCore(@Param("model_id") int model_id);
+	
 	@Query(value ="select distinct comp_name from vehicle_detail v join component c on v.comp_id = c.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'i' ", nativeQuery = true)
 	List<String> getCompnameByInt(@Param("model_id") int model_id);
 	
