@@ -7,4 +7,5 @@ import com.example.entities.Segment;
 
 @Repository
 public interface SegmentRepository extends JpaRepository<Segment, Integer> {
+	
 }
