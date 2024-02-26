@@ -46,7 +46,4 @@ public class Alternate_Component {
 		public void setDelta_price(double delta_price) {
 			this.delta_price = delta_price;
 		}
-		
-		
-		 
 }
