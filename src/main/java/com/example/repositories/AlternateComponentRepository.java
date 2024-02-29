@@ -25,16 +25,16 @@ import jakarta.transaction.Transactional;
 @Repository
 @Transactional
 public interface AlternateComponentRepository extends JpaRepository<Alternate_Component, Integer>  {
-	@Query(value ="select distinct comp_name from vehicle_detail v join component c on v.comp_id = c.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 's' ", nativeQuery = true)
+	@Query(value ="select distinct comp_name,a.delta_price from vehicle_detail v join component c on v.comp_id = c.comp_id join alternate_component a on a.comp_id =v.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 's' ", nativeQuery = true)
 	List<String> getCompnameByStd(@Param("model_id") int model_id);
 	
-	@Query(value ="select distinct comp_name from vehicle_detail v join component c on v.comp_id = c.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'i' ", nativeQuery = true)
+	@Query(value ="select distinct comp_name,a.delta_price from vehicle_detail v join component c on v.comp_id = c.comp_id join alternate_component a on a.comp_id =v.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'i' ", nativeQuery = true)
 	List<String> getCompnameByInt(@Param("model_id") int model_id);
 	
-	@Query(value ="select distinct comp_name from vehicle_detail v join component c on v.comp_id = c.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'e' ", nativeQuery = true)
+	@Query(value ="select distinct comp_name,a.delta_price from vehicle_detail v join component c on v.comp_id = c.comp_id join alternate_component a on a.comp_id =v.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'e' ", nativeQuery = true)
 	List<String> getCompnameByExt(@Param("model_id") int model_id);
 	
-	@Query(value ="select distinct comp_name from vehicle_detail v join component c on v.comp_id = c.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'c' ", nativeQuery = true)
+	@Query(value ="select distinct comp_name,a.delta_price from vehicle_detail v join component c on v.comp_id = c.comp_id join alternate_component a on a.comp_id =v.comp_id where is_configurable = 'yes' and v.model_id = :model_id and v.comp_type = 'c' ", nativeQuery = true)
 	List<String> getCompnameByCore(@Param("model_id") int model_id);
 	
 	
